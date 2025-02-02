@@ -48,11 +48,10 @@ export function updateLoadingMessage(isVisible) {
 }
 
 export function displayEndMessage() {
-  const message = "We're sorry, but you've reached the end of search results.";
   iziToast.info({
     title: 'End of results',
-    message: message,
+    message: "We're sorry, but you've reached the end of search results.",
     position: 'bottomRight',
   });
-  updateLoadMoreButton(false); // Сховуємо кнопку "Load more"
+  updateLoadMoreButton(false);
 }

@@ -19,8 +19,8 @@ export async function getPictures(query, page) {
     });
 
     if (response.status !== 200 || !response.data) {
-      throw new Error('Error receiving data from API');
-    }
+  throw new Error('Error receiving data from API');
+}
 
     return response.data; // Повертаємо дані для подальшої обробки
   } catch (error) {

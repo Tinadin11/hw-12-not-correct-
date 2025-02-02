@@ -76,9 +76,17 @@ async function renderPictures(query, page) {
 
 buttonLoad.addEventListener('click', async () => {
   currentPage += 1;
-  updateLoadingMessage(true); // Показуємо повідомлення про завантаження
-  await renderPictures(searchQuery, currentPage);
-  updateLoadingMessage(false); // Ховаємо повідомлення після завантаження
+  updateLoadingMessage(true);
+  try {
+    await renderPictures(searchQuery, currentPage);
+  } catch (error) {
+    console.error(error);
+    iziToast.error({
+      title: 'Error',
+      message: 'Sorry, something went wrong!',
+    });
+  }
+  updateLoadingMessage(false);
 });
 
 // Функція для ініціалізації VANTA.BIRDS
