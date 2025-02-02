@@ -17,30 +17,38 @@
     <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-C9idZmnG.js">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-Dr4k8ETB.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-BrFAdGHA.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-BObXhHFA.css">
   </head>
 
   <body>
     <main>
       <!-- Контейнер для фону VANTA -->
-<div id="vanta-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+      <div
+        id="vanta-bg"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        "
+      ></div>
 
-
-        <form class="form-search search">
-          <input
-            class="input-search"
-            name="search"
-            type="text"
-            placeholder="Search images..."
-          />
-          <button class="button-search" type="submit">Search</button>
-        </form>
-        <ul class="gallery"></ul>
-        <button class="button-load" type="submit">Load more</button>
-        <p class="text-load" id="loading-message" style="display: none">
-          Loading images, please wait...
-        </p>
-      </div>
+      <form class="form-search search">
+        <input
+          class="input-search"
+          name="search"
+          type="text"
+          placeholder="Search images..."
+        />
+        <button class="button-search" type="submit">Search</button>
+      </form>
+      <ul class="gallery"></ul>
+      <button class="button-load" type="submit">Load more</button>
+      <p class="text-load" id="loading-message" style="display: none">
+        Loading images, please wait...
+      </p>
     </main>
     <script src="js/three.min.js"></script>
     <script src="js/vanta.birds.min.js"></script>
