@@ -16,19 +16,20 @@
 }
 
 .input-search:hover {
-    border-color: #000
+    border-color: #000;
 }
 
 .input-search:focus {
-    border-color: #4E75FF
+    border: 1px solid #452c8b;
 }
 
-.button-search {
+.button-search,
+.button-load {
     border-radius: 8px;
-    background-color: #4E75FF;
+    background-color: #452e82;
     border: none;
     color: #fff;
-    ;
+    border: none;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -38,23 +39,66 @@
     margin-left: 8px;
 }
 
-.button-search:hover {
-    background-color: #6C8CFF;
-}
-
 .button-load {
     display: block;
     margin: 20px auto;
-    border-radius: 8px;
-    background: #60656a;
-    border: 1px solid #60656a;
-    color: #edf4fa;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 8px 25px;
+}
+
+.button-search:hover,
+.button-load:hover,
+.button-search:focus,
+.button-load:focus {
+    background-color: #a9a8ac;
+    color: #654d70;
+    border: 1px solid #856d90;
+
+}
+
+.loader {
+    display: block;
+    text-align: center;
+    left: 50%;
+    font-size: 16px;
+    color: #555;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: max-content;
+    height: inherit;
+    animation: away 3s infinite alternate ease-in-out;
+}
+
+.loader:after {
+    top: auto;
+    left: 0;
+}
+
+@keyframes away {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
 .gallery {
@@ -94,10 +138,10 @@
     flex-direction: row;
     gap: 24px;
     align-items: center;
-    justify-content: center;
-    min-width: 320px;
     height: 48px;
-    padding: 10px 0;
+    padding: 10px;
+    min-width: 100%;
+    background-color: #fff;
 }
 
 .gallery-item:hover .info-list {
@@ -149,4 +193,13 @@
     50% {
         opacity: 1;
     }
+}
+
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }

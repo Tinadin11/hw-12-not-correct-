@@ -20,7 +20,10 @@
 
   <body>
     <main>
-      <div class="container">
+      <!-- Контейнер для фону VANTA -->
+<div id="vanta-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+
         <form class="form-search search">
           <input
             class="input-search"
@@ -38,5 +41,7 @@
       </div>
     </main>
     <script type="module" src="./main.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/vanta.birds.min.js"></script>
   </body>
 </html>

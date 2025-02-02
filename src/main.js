@@ -80,3 +80,36 @@ buttonLoad.addEventListener('click', async () => {
   await renderPictures(searchQuery, currentPage);
   updateLoadingMessage(false); // Ховаємо повідомлення після завантаження
 });
+
+// Функція для ініціалізації VANTA.BIRDS
+function initVantaBackground() {
+  const backgroundElement = document.querySelector("#vanta-bg"); // Вибір елемента для фону
+  if (backgroundElement) {
+    VANTA.BIRDS({
+      el: backgroundElement, // вказуємо, що фон буде на цьому елементі
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x190d70,
+      color1: 0x33a7,
+      color2: 0xcfcbeb,
+      colorMode: "lerp",
+      birdSize: 2.20,
+      wingSpan: 22.00,
+      speedLimit: 5.00,
+      separation: 54.00,
+      alignment: 60.00,
+      cohesion: 37.00,
+      quantity: 4.00,
+      backgroundAlpha: 0.64
+    });
+  }
+}
+
+// Виклик функції для ініціалізації фонового ефекту після завантаження сторінки
+window.onload = initVantaBackground;
+
